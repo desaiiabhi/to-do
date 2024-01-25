@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <table>
+            <tr>
+                <td>name:</td>
+                <td>
+                    <select name="u_id">
+                        <option selected disabled>Select User</option>
+                        <% results.forEach(function(login) { %>
+                            <option value="<%= login._id%>"><%= login.name%></option>
+                        <% }) %>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>task_name</td>
+                <td>
+                    <input type="text" name="task_name" required></td>
+            </tr>
+            <tr>
+                <td>
+                    
+                    <button type="submit">submit</button>
+                </td>
+            </tr>
+        </table> 
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=""> 
+        <th>task_id</th>
+        <th>name</th>
+        <th>us._id</th>
+    
+        <% results.forEach(function(login) { %>
+            <tr>
+                <td><%= login._id %></td>
+                <td><%= login.task_name %></td>
+                <td><%= login.u_id %></td>
+                <td><a href="running/<%= login._id %>">running</a></td>
+                <td><a href="complete/<%= login._id %>">complate</a></td>
+                <td><a href="decline/<%= login._id %>">decline</a></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

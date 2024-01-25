@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: black; margin-left: auto; margin-right: auto;">completed</h1>
+    <table border=""> 
+        <th>task_id</th>
+        <th>name</th>
+        <th>user._id</th>
+        <th>user_name</th>
+    
+        <% results.forEach(function(task) { %>
+            <tr>
+                <td><%= task._id %></td>
+                <td><%= task.task_name %></td>
+                <td><%= task.u_id %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

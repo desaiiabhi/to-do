@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/stylesheet/style.css">
+
+    <title>admindashboard</title>
+    <!-- <style>
+        .container {
+            margin-top: 100px;
+        }
+
+        .counter-box {
+            display: block;
+            background: #f6f6f6;
+            padding: 40px 20px 37px;
+            text-align: center
+        }
+
+        .counter-box p {
+            margin: 5px 0 0;
+            padding: 0;
+            color: #909090;
+            font-size: 18px;
+            font-weight: 500
+        }
+
+        .counter-box i {
+            font-size: 60px;
+            margin: 0 0 15px;
+            color: #d2d2d2
+        }
+
+        .counter {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            color: #666;
+            line-height: 28px
+        }
+
+        .counter-box.colored {
+            background: #3acf87;
+        }
+
+        .counter-box.colored p,
+        .counter-box.colored i,
+        .counter-box.colored .counter {
+            color: #fff
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        });
+    </script> -->
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="four col-md-3">
+                <div class="counter-box colored">
+                    <i class="fa  fa-user"></i>
+                    <span class="counter"><%= re1 %></span>
+                    <p>total user</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box">
+                    <i class="fa fa-group"></i>
+                    <span class="counter">3275</span>
+                    <p>Registered Members</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box">
+                    <i class="fa  fa-shopping-cart"></i>
+                    <span class="counter">289</span>
+                    <p>Available Products</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box">
+                    <i class="fa  fa-user"></i>
+                    <span class="counter">1563</span>
+                    <p>Saved Trees</p>
+                </div>
+            </div>
+            <form method="post">
+                <table>
+                    <tr>
+                        <td><button name="adde"><a href="add_user">add employee</a></button></td>&nbsp;&nbsp;&nbsp;
+                        <td><button name="add"><a href="task">add task</a></button></td>&nbsp;&nbsp;&nbsp;
+                        <td><button name="add"><a href="view_task">view task</a></button></td>
+                    </tr>
+                </table>
+                <table border="1">
+                    <th>user id</th>
+                    <th>user name</th>
+                    <th>user email</th>
+                    <th>user password</th>
+                    <th>user update</th>
+                    <th>user delete</th>
+                    <% re.forEach(function(user) { %>
+                        <tr>
+                            <td>
+                                <%= user.u_id %>
+                            </td>
+                            <td>
+                                <%= user.name %>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                            <td>
+                                <%= user.password %>
+                            </td>
+                            <td><a href="updateuser/<%= user._id %>">update</a></td>
+                            <td><a href="delete/<%= user._id %>">delete</a></td>
+                            <td><a href="task/<%= user._id %>">add task</a></td>
+                        </tr>
+                        <% }) %>
+                </table>
+            </form> 
+        </div>
+    </div>
+
+    <script src="/javascripts/script.js"></script>
+
+</body>
+
+</html>

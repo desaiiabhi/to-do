@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+    <title>admindashboard</title>
+    <style>
+        .container {
+            margin-top: 100px;
+        }
+
+        .counter-box {
+            display: block;
+            background: #f6f6f6;
+            padding: 40px 20px 37px;
+            text-align: center
+        }
+
+        .counter-box p {
+            margin: 5px 0 0;
+            padding: 0;
+            color: #909090;
+            font-size: 18px;
+            font-weight: 500
+        }
+
+        .counter-box i {
+            font-size: 60px;
+            margin: 0 0 15px;
+            color: #d2d2d2
+        }
+
+        .counter {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            color: #666;
+            line-height: 28px
+        }
+
+        .counter-box.colored {
+            background: #3acf87;
+        }
+
+        .counter-box.colored p,
+        .counter-box.colored i,
+        .counter-box.colored .counter {
+            color: #fff
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 1000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="four col-md-3">
+                <div class="counter-box colored">
+                    <a href="running"> <i class="fa fa-thumbs-o-up"></i></a>
+                    <span class="counter">
+                        <%= running %>
+                    </span>
+                    <p>running</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box">
+                    <a href="pending"> <i class="fa fa-group"></i></a>
+                    <span class="counter">
+                        <%= pending %>
+                    </span>
+                    <p>pending</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box">
+                    <a href="complete"> <i class="fa  fa-shopping-cart"></i></a>
+                    <span class="counter">
+                        <%= complete %>
+                    </span>
+                    <p>complete</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box">
+                   <a href="decline"> <i class="fa  fa-user"></i></a>
+                    <span class="counter">
+                        <%= decline %>
+                    </span>
+                    <p>decline</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
