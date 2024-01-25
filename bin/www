@@ -10,7 +10,7 @@ var http = require('http');
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb+srv://abhi20:abhi2004@cluster0.f3igmgl.mongodb.net/to_do_list')
+mongoose.connect('')   //Placing a link online  mongodb atlas
   .then(() => console.log('Connected!'));
 
 /**
